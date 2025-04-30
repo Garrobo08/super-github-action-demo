@@ -39,14 +39,20 @@ jobs:
           git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
           git push origin HEAD:${{ github.ref_name }}
 
-      - name: Eliminar documentación anterior
-        run: rm -rf docs_output
-
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
-
+  
       - name: Verificar si docs_output cambió y hacer push si es necesario
         run: |
+          echo "📂 Contenido de docs_output tras generar documentación:"
+          ls -R docs_output || echo "❌ La carpeta docs_output no fue creada"
+
+          # Añadir .gitkeep si no hay nada (solo la primera vez)
+          if [ ! -d docs_output ]; then
+            mkdir -p docs_output
+            touch docs_output/.gitkeep
+          fi
+
           if git diff --quiet docs_output; then
             echo "✅ No hay cambios en docs_output, no se hace commit."
           else
