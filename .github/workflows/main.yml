@@ -41,7 +41,7 @@ jobs:
 
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
-  
+
       - name: Verificar si docs_output cambió y hacer push si es necesario
         run: |
           echo "📂 Contenido de docs_output tras generar documentación:"
