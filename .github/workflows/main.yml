@@ -39,8 +39,13 @@ jobs:
           git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
           git push origin HEAD:${{ github.ref_name }}
 
+<<<<<<< HEAD
       - name: Eliminar documentación anterior
         run: rm -rf docs_output
+=======
+          - name: Eliminar documentación anterior
+          run: rm -rf docs_output
+>>>>>>> 48b545439f6633647194b0768a6481628ded0a0d
 
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
