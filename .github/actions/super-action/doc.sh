@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "🧹 Eliminando documentación anterior..."
-rm -rf docs_output
 
 echo "📄 Generando documentación con JSDoc..."
 ./node_modules/.bin/jsdoc -c jsdoc.json 
