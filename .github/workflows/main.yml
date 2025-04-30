@@ -52,4 +52,3 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
           git push origin HEAD:${{ github.ref_name }}
-          
