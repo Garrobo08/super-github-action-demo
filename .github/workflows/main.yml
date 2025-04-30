@@ -53,7 +53,7 @@ jobs:
             git add docs_output
             git commit -m "📚 Documentación generada automáticamente [skip ci]"
             git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-            git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
+            git pull --rebase --autostash origin ${{ github.ref_name }} || echo "⚠️ Pull fallido, puede que no fuera necesario"
             git push origin HEAD:${{ github.ref_name }}
           else
             echo "✅ No hay cambios en docs_output, no se hace commit."
