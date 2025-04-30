@@ -40,10 +40,10 @@ jobs:
 
           - name: Eliminar documentación anterior
           run: rm -rf docs_output
-  
+
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
-  
+
       - name: Verificar si docs_output cambió y hacer push si es necesario
         run: |
           if git diff --quiet docs_output; then
