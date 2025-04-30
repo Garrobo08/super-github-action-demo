@@ -42,4 +42,5 @@ Si deseas contribuir a este proyecto, ¡haz un fork y envía un pull request!
 
 A continuación, una lista de personas que han contribuido hasta ahora:
 
+- Garrobo08 <andreagarroboguzman@gmail.com>
 - github-actions[bot] <github-actions[bot]@users.noreply.github.com>
