@@ -36,8 +36,19 @@ jobs:
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           echo "Usando token GH_TOKEN para el push."
-          git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
-          git push origin HEAD:${{ github.ref_name }}
+      
+          # Verificamos si hay cambios
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "📄 Hay cambios tras la acción personalizada, haciendo commit..."
+            git add .
+            git commit -m "🚀 Código autoformateado por la acción [skip ci]" || echo "Sin cambios que commitear"
+      
+            # Pull con autostash para evitar el error
+            git pull --rebase --autostash origin ${{ github.ref_name }} || echo "⚠️ No se pudo hacer rebase, puede que no fuera necesario"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "✅ No hay cambios que hacer push tras la acción personalizada."
+          fi
 
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
