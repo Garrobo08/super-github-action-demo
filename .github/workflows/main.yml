@@ -10,13 +10,13 @@ jobs:
   super-action:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }} # Aquí definimos el token como una variable de entorno
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Checkout del código
         uses: actions/checkout@v3
         with:
-          persist-credentials: false # IMPORTANTE para que use nuestro token GH_TOKEN
+          persist-credentials: false
 
       - name: Configurar usuario de git
         run: |
@@ -30,20 +30,21 @@ jobs:
         uses: ./.github/actions/super-action
         with:
           nombre: Andrea
-          cena: "pizza barbacoa" # Ejemplo de cena que se le pasa
+          cena: "pizza barbacoa"
 
       - name: Push de cambios formateados
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           echo "Usando token GH_TOKEN para el push."
+          git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
           git push origin HEAD:${{ github.ref_name }}
 
-          - name: Eliminar documentación anterior
-          run: rm -rf docs_output
-  
+      - name: Eliminar documentación anterior
+        run: rm -rf docs_output
+
       - name: Generar documentación con JSDoc
         run: bash .github/actions/super-action/doc.sh
-  
+
       - name: Verificar si docs_output cambió y hacer push si es necesario
         run: |
           if git diff --quiet docs_output; then
@@ -53,5 +54,6 @@ jobs:
             git add docs_output
             git commit -m "📚 Documentación generada automáticamente [skip ci]" || echo "Sin cambios que commitear"
             git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+            git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
             git push origin HEAD:${{ github.ref_name }}
           fi
