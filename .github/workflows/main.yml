@@ -47,19 +47,9 @@ jobs:
           echo "📂 Contenido de docs_output tras generar documentación:"
           ls -R docs_output || echo "❌ La carpeta docs_output no fue creada"
 
-          # Añadir .gitkeep si no hay nada (solo la primera vez)
-          if [ ! -d docs_output ]; then
-            mkdir -p docs_output
-            touch docs_output/.gitkeep
-          fi
-
-          if git diff --quiet docs_output; then
-            echo "✅ No hay cambios en docs_output, no se hace commit."
-          else
-            echo "📄 Hay cambios en documentación, procediendo al commit..."
-            git add docs_output
-            git commit -m "📚 Documentación generada automáticamente [skip ci]" || echo "Sin cambios que commitear"
-            git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-            git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
-            git push origin HEAD:${{ github.ref_name }}
-          fi
+          git add docs_output
+          git commit -m "📚 Documentación generada automáticamente [skip ci]" || echo "Sin cambios que commitear"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase origin ${{ github.ref_name }} || echo "No se pudo hacer rebase"
+          git push origin HEAD:${{ github.ref_name }}
+          
