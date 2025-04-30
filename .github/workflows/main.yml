@@ -1,0 +1,57 @@
+name: Super Acción Demo
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  super-action:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }} # Aquí definimos el token como una variable de entorno
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false # IMPORTANTE para que use nuestro token GH_TOKEN
+
+      - name: Configurar usuario de git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Instalar dependencias del proyecto
+        run: npm install
+
+      - name: Ejecutar acción personalizada
+        uses: ./.github/actions/super-action
+        with:
+          nombre: Andrea
+          cena: "pizza barbacoa" # Ejemplo de cena que se le pasa
+
+      - name: Push de cambios formateados
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          echo "Usando token GH_TOKEN para el push."
+          git push origin HEAD:${{ github.ref_name }}
+
+          - name: Eliminar documentación anterior
+          run: rm -rf docs_output
+  
+      - name: Generar documentación con JSDoc
+        run: bash .github/actions/super-action/doc.sh
+  
+      - name: Verificar si docs_output cambió y hacer push si es necesario
+        run: |
+          if git diff --quiet docs_output; then
+            echo "✅ No hay cambios en docs_output, no se hace commit."
+          else
+            echo "📄 Hay cambios en documentación, procediendo al commit..."
+            git add docs_output
+            git commit -m "📚 Documentación generada automáticamente [skip ci]" || echo "Sin cambios que commitear"
+            git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
