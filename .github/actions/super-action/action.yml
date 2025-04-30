@@ -16,3 +16,5 @@ runs:
       shell: bash
     - run: bash ${{ github.action_path }}/doc.sh
       shell: bash
+    - run: bash ${{ github.action_path }}/update_readme_if_new_contributor.sh
+      shell: bash
