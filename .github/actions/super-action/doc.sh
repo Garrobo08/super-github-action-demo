@@ -14,3 +14,5 @@ ls -R out || echo "❌ No se generó el directorio 'out'"
 
 mkdir -p docs_output
 mv out/* docs_output/ || echo "❌ No se pudo mover documentación"
+
+echo "✅ Script doc.sh finalizado"
