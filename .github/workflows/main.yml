@@ -46,7 +46,7 @@ jobs:
         run: |
           echo "📂 Contenido de docs_output tras generar documentación:"
           ls -R docs_output || echo "❌ La carpeta docs_output no fue creada"
-      
+
           # Detectar si hay cambios en docs_output
           if [ -n "$(git status --porcelain docs_output)" ]; then
             echo "📄 Hay cambios en documentación, procediendo al commit..."
