@@ -70,4 +70,4 @@ jobs:
             git push origin HEAD:${{ github.ref_name }}
           fi
       - name: Actualizar README.md si hay nuevos contribuidores
-        run: bash .github/actions/super-action/update_readme_if_new_contributor.sh
+        run: bash .github/actions/super-action/update_readme_if_new_contributor.sh 
