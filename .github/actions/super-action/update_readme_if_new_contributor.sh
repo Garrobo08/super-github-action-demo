@@ -18,8 +18,9 @@ fi
 # Comparamos con la lista anterior
 if ! diff -q "$CONTRIB_FILE" "$CONTRIB_TEMP" > /dev/null; then
   echo "👥 Nuevos contribuidores detectados. Actualizando README.md..."
-  cp "$CONTRIB_TEMP" "$CONTRIB_FILE"
-  bash .github/actions/super-action/update_readme.sh
+  # Combinar contribuidores previos y nuevos sin duplicados
+  cat "$CONTRIB_FILE" "$CONTRIB_TEMP" | sort | uniq > "$CONTRIB_FILE.tmp"
+  mv "$CONTRIB_FILE.tmp" "$CONTRIB_FILE"  bash .github/actions/super-action/update_readme.sh
 else
   echo "✅ Lista de contribuidores sin cambios. README.md no se actualiza."
 fi
