@@ -36,6 +36,7 @@ git add .
 git commit -m "mensaje"
 \`\`\`
 
+En caso de que el push no se pueda realizar, use el siguiente comando antes del push:
 \`\`\`bash
 git push origin main
 \`\`\`
