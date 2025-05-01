@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: bash ${{ github.action_path }}/saludo.sh "${{ inputs.nombre }}" "${{ inputs.cena }}"
+    - run: bash ${{ github.action_path }}/saludo.sh "${{ inputs.nombre }}" "${{ inputs.cambio }}"
       shell: bash
     - run: bash ${{ github.action_path }}/format.sh
       shell: bash

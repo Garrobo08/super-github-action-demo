@@ -25,7 +25,7 @@ jobs:
         uses: ./.github/actions/super-action
         with:
           nombre: ${{ github.actor }}
-          cena: "pizza barbacoa"
+          cambio: "acción"
 
       - name: Push de cambios formateados
         run: |
