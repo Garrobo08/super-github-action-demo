@@ -5,6 +5,7 @@ Este es un proyecto de ejemplo que genera documentación automáticamente usando
 ## 🔧 Descripción
 
 Este proyecto es un ejemplo de automatización usando **GitHub Actions** para realizar varias tareas importantes de manera automática:
+
 - Generación de documentación con **JSDoc** 📚.
 - Corrección automática de errores de formato con **Prettier** 🔧.
 - Saludo personalizado según la hora del día 🕒.
@@ -38,7 +39,6 @@ npm run docs
 Si deseas contribuir a este proyecto, ¡haz un fork y envía un pull request!
 
 ## 🙌 Contribuidores
-
 
 A continuación, una lista de personas que han contribuido hasta ahora:
 
