@@ -37,10 +37,6 @@ git commit -m "mensaje"
 \`\`\`
 
 \`\`\`bash
-git pull
-\`\`\`
-
-\`\`\`bash
 git push origin main
 \`\`\`
 

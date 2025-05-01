@@ -18,11 +18,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Configurar usuario de git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Instalar dependencias del proyecto
         run: npm install
 
