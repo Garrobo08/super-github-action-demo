@@ -29,7 +29,7 @@ jobs:
       - name: Ejecutar acción personalizada
         uses: ./.github/actions/super-action
         with:
-          nombre: Andrea
+          nombre: ${{ github.actor }}
           cena: "pizza barbacoa"
 
       - name: Push de cambios formateados
