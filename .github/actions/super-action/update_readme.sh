@@ -73,4 +73,4 @@ done < .github/contribuidores.txt
 
 echo "✅ README.md actualizado con lista de contribuidores."
 
-echo "# Hola " >> .gitignore
+echo "# Hola chicos se cambia mi correo? " >> .gitignore
