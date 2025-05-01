@@ -3,7 +3,7 @@
 @param {number} b Segundo número
 @returns {number} La suma de a y b */
 function sumar(a, b) {
-  return a - b;
+  return a + b;
 }
 
 /** Resta dos números.
