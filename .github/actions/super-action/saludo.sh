@@ -12,8 +12,8 @@ elif [ "$HORA" -lt 16 ]; then # esto solo aplica 14:00 a 15:59:59
   echo "$NOMBRE, el código puede esperar. ¡ES HORA DE LA SIESTA! 😴"
 elif [ "$HORA" -lt 18 ]; then # esto solo aplica 16:00 a 17:59:59
   echo "Seguimos a tope, $NOMBRE. ¡Que el café no falte! 🔧☕"
-# elif [ "$HORA" -lt 21 ]; then # esto solo aplica 18:00 a 20:59:59
-#   echo "Hola $NOMBRE, ¿cómo estuvo la cena? 🍽️ ¡Buen trabajo hoy!"
+elif [ "$HORA" -lt 21 ]; then # esto solo aplica 18:00 a 20:59:59
+  echo "Hola $NOMBRE, ¿cómo estuvo la cena? 🍽️ ¡Buen trabajo hoy!"
 else # esto solo aplica 21:00 a 23:59:59
   echo "$NOMBRE, es tarde... no olvides descansar. 💤"
 fi
