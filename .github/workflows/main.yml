@@ -1,9 +1,5 @@
 name: Super Acción Demo
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.actor }}
-  cancel-in-progress: true
-
 on:
   push:
     branches: ["main"]
