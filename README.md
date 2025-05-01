@@ -59,5 +59,6 @@ A continuación, una lista de personas que han contribuido hasta ahora:
 - ElineeF <en.freites.2022@alumnos.urjc.es>
 - Garrobo08 <andreagarroboguzman@gmail.com>
 - Jordigb44 <jordigb44@gmail.com>
+- chubi0l <130486125+chubi0l@users.noreply.github.com>
 - chubi0l <o.chubinova.2022@alumnos.urjc.es>
 - github-actions[bot] <github-actions[bot]@users.noreply.github.com>
