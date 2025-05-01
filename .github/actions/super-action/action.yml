@@ -2,10 +2,10 @@ name: "Super Action Personalizada"
 description: "Formatea código, saluda, y genera documentación automáticamente"
 inputs:
   nombre:
-    description: "ANDREA"
+    description: "Demo Calidad Software"
     required: true
   cena:
-    description: "PIZZA BARBACOA"
+    description: "Custom Github Actions"
     required: false
 runs:
   using: "composite"
