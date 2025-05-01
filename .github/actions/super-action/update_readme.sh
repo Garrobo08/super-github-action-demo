@@ -53,7 +53,7 @@ git push origin main
 
 ## 📦 Contribuciones
 
-Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit!
+Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit! 
 
 ## 🙌 Contribuidores
 
