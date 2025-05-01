@@ -29,7 +29,15 @@ npm install
 ## 🚀 Uso
 
 \`\`\`bash
-npm run docs
+git add .
+\`\`\`
+
+\`\`\`bash
+git commit -m "mensaje"
+\`\`\`
+
+\`\`\`bash
+git push origin main
 \`\`\`
 
 ## 📝 Esquema del Proyecto
@@ -41,7 +49,7 @@ npm run docs
 
 ## 📦 Contribuciones
 
-Si deseas contribuir a este proyecto, ¡haz un fork y envía un pull request!
+Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit!
 
 ## 🙌 Contribuidores
 
