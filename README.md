@@ -5,7 +5,6 @@ Este es un proyecto de ejemplo que genera documentación automáticamente usando
 ## 🔧 Descripción
 
 Este proyecto es un ejemplo de automatización usando **GitHub Actions** para realizar varias tareas importantes de manera automática:
-
 - Generación de documentación con **JSDoc** 📚.
 - Corrección automática de errores de formato con **Prettier** 🔧.
 - Saludo personalizado según la hora del día 🕒.
@@ -31,7 +30,7 @@ git add .
 git commit -m "mensaje"
 ```
 
-En caso de que el push no se pueda realizar, use el siguiente comando antes del push:
+- En caso de que el push no se pueda realizar, use el siguiente comando antes del push:
 
 ```bash
 git push origin main
@@ -46,9 +45,10 @@ git push origin main
 
 ## 📦 Contribuciones
 
-Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit!
+Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit! 
 
 ## 🙌 Contribuidores
+
 
 A continuación, una lista de personas que han contribuido hasta ahora:
 
