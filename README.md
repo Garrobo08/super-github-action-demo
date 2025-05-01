@@ -31,6 +31,10 @@ git commit -m "mensaje"
 ```
 
 ```bash
+git pull
+```
+
+```bash
 git push origin main
 ```
 
@@ -50,5 +54,4 @@ Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit!
 
 A continuación, una lista de personas que han contribuido hasta ahora:
 
-- chubi0l <130486125+chubi0l@users.noreply.github.com>
 - github-actions[bot] <github-actions[bot]@users.noreply.github.com>
