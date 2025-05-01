@@ -59,4 +59,4 @@ done < .github/contribuidores.txt
 
 echo "✅ README.md actualizado con lista de contribuidores."
 
-echo "# Esto es un cambio temporal para aparecer como contribuidora" >> .gitignore
+echo "# Hola" >> .gitignore
