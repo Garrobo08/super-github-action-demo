@@ -6,7 +6,6 @@ function sumar(a, b) {
   return a + b;
 }
 
-
 /** Resta dos números.
 @param {number} a Primer número
 @param {number} b Segundo número
