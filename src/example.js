@@ -18,6 +18,5 @@ function restar(a, b) {
 @param {number} a Primer número
 @param {number} b Segundo número
 @returns {number} El resultado de multiplicar a y b */
-function multiplicar(a, b) {
-  return a * b;
+function multiplicar(a, b) {return a * b;
 }
