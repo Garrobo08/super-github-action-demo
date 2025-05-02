@@ -12,4 +12,4 @@ function sumar(a, b) {
 // @returns {number} La suma de a y b */
 // function restar(a, b) {
 //   return a - b;
-// } 
+// }
