@@ -5,7 +5,6 @@ Este es un proyecto de ejemplo que genera documentación automáticamente usando
 ## 🔧 Descripción
 
 Este proyecto es un ejemplo de automatización usando **GitHub Actions** para realizar varias tareas importantes de manera automática:
-
 - Generación de documentación con **JSDoc** 📚.
 - Corrección automática de errores de formato con **Prettier** 🔧.
 - Saludo personalizado según la hora del día 🕒.
@@ -50,15 +49,15 @@ git push origin main
 
 ## 📦 Contribuciones
 
-Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit!
+Si deseas contribuir a este proyecto, ¡haz un cambio y sube tu commit! 
 
 ## 🙌 Contribuidores
+
 
 A continuación, una lista de personas que han contribuido hasta ahora:
 
 - ElineeF <en.freites.2022@alumnos.urjc.es>
 - Garrobo08 <andreagarroboguzman@gmail.com>
 - Jordigb44 <jordigb44@gmail.com>
-- chubi0l <130486125+chubi0l@users.noreply.github.com>
 - chubi0l <o.chubinova.2022@alumnos.urjc.es>
 - github-actions[bot] <github-actions[bot]@users.noreply.github.com>
